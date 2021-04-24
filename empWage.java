@@ -6,9 +6,12 @@ public class empWage {
 		int isPartTime = 2;
 		int wagePerHour = 20;
 		int workHours = 0;
+		int totalWorkHours = 0;
+		int totalWorkDays = 0;
 
-		for (int i = 0; i<20; i++)
+		while (totalWorkDays<20 && totalWorkHours<=100)
 		{
+			totalWorkDays++;
 			double attendance = Math.floor(Math.random() * 10) % 3;
 			switch ((int) attendance )
 			{
@@ -25,8 +28,13 @@ public class empWage {
 					workHours = 0;
 					break;
 			}
+			totalWorkHours = (totalWorkHours + workHours);
 			int dailyWage = (wagePerHour * workHours);
-			System.out.println (dailyWage);
+			System.out.println ("Daily wage for employee is:-" + dailyWage);
+			System.out.println ("Total Working Hours of Employee is:-" + totalWorkHours + " and total working days is :-" + totalWorkDays);
 		}
+		int totalWage = (totalWorkHours * wagePerHour);
+		System.out.println ("The total wage for employee is:-" + totalWage);
 	}
 }
+
